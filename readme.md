@@ -2,7 +2,7 @@
 A tiny C testing framework with opinions and very little patience.
 
 `detest` is a small, header-only testing framework for C, inspired by
-greatest.h, but intentionally minimal and explicit.
+[greatest.h](https://github.com/silentbicycle/greatest), but intentionally minimal and explicit.
 
 No runners.
 No magic configuration.
