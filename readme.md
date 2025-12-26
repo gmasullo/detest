@@ -69,37 +69,3 @@ this is not your framework.
 Do whatever you want.
 If it breaks, you get to keep both pieces.
 
-```
-#include "detest.h"
-
-/* Define some example tests */
-
-DETEST_TEST(math, addition)
-{
-ASSERT_EQ(2 + 2, 4);
-}
-
-DETEST_TEST(math, subtraction)
-{
-ASSERT_EQ(10 - 3, 7);
-}
-
-DETEST_TEST(strings, equality)
-{
-ASSERT_EQ_STR("hello", "hello");
-}
-
-DETEST_TEST(strings, inequality)
-{
-ASSERT_NE(strcmp("foo", "bar"), 0);
-}
-
-/* Framework implementation and entry point */
-#define DETEST_DEFINITIONS
-#include "detest.h"
-
-int main(int argc, char **argv)
-{
-return detest_run(argc, argv);
-}
-```
