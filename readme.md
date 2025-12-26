@@ -56,7 +56,7 @@ Exit codes
 >0 : number of failed tests
 ```
 
-Philosophy
+## Philosophy
 
 If a test fails, it should say where and why.
 If it segfaults, it should not pretend otherwise.
@@ -64,7 +64,7 @@ If it segfaults, it should not pretend otherwise.
 If you want mocks, fixtures and emotional support,
 this is not your framework.
 
-License
+## License
 
 Do whatever you want.
 If it breaks, you get to keep both pieces.
