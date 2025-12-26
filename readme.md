@@ -30,7 +30,7 @@ DETEST_TEST(math, addition)
   ASSERT_EQ(2 + 2, 4);
 }
 ```
-In one compilation unit, define the framework implementation and call detest_run().
+In one compilation unit, define the framework implementation and call `detest_run()`.
 
 See main.c for a complete example.
 
