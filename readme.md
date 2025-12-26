@@ -29,17 +29,14 @@ DETEST_TEST(math, addition)
 {
   ASSERT_EQ(2 + 2, 4);
 }
+```
 In one compilation unit, define the framework implementation and call detest_run().
 
 See main.c for a complete example.
-Running
-Always show details
-make
-./tests
 
 
 Useful options:
-
+```
 -s <filter> : suite filter
 
 -t <filter> : test filter
@@ -49,6 +46,7 @@ Useful options:
 -q : quiet mode
 
 -j <file> : write CTRF JSON report
+```
 
 Exit codes
 
