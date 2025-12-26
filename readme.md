@@ -50,9 +50,11 @@ Useful options:
 
 Exit codes
 
+```
 0 : all tests passed
 
 >0 : number of failed tests
+```
 
 Philosophy
 
