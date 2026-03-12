@@ -1,3 +1,4 @@
+
 /* a small testing framework, inspired by greatest.h */
 #pragma once
 #include <stdio.h>
@@ -54,7 +55,7 @@
   void detest_test_ ## _suite ## _ ## _test ## _register() { \
     detest_register_test(#_suite,#_test,__FILE__,__LINE__, detest_test_ ## _suite ## _ ## _test);\
   }\
-  void detest_test_ ## _suite ## _ ## _test(detest_test_t* test) 
+  void detest_test_ ## _suite ## _ ## _test(detest_test_t* test)
 
 
 typedef struct detest_suite_s detest_suite_t;
@@ -62,7 +63,7 @@ typedef struct detest_test_s detest_test_t;
 typedef void (*detest_func_t)(detest_test_t* test);
 
 void detest_register_test(const char* suite_name,
-      const char* name, const char* def_file, 
+      const char* name, const char* def_file,
       unsigned def_line, detest_func_t body);
 
 struct detest_test_s {
@@ -82,7 +83,7 @@ detest_test_t*  next_failed;
     unsigned    total_assertions;
     unsigned    duration;
 };
-  
+
 struct detest_suite_s {
     const char* name;
     detest_test_t* tests;
@@ -269,7 +270,6 @@ extern detest_status_t detest_all_suites;\
       detest_all_suites.n_suites = 0;\
       detest_all_suites.allocated_suites = 100;\
       detest_all_suites.suites = calloc(100,sizeof(detest_suite_t));\
-      signal(SIGSEGV, detest_catch_sigv); \
     }\
   }\
   void detest_register_test(const char* suite_name,\
@@ -412,6 +412,20 @@ extern detest_status_t detest_all_suites;\
   }\
 } while(0)
 
+#define ASSERT_NULL(_a) do {\
+  DETEST_COMMON_ASSERT;\
+  if(_a) {\
+    DETEST_FAIL("expected '%s' to be null",#_a);\
+  }\
+} while(0)
+
+#define ASSERT_NOT_NULL(_a) do {\
+  DETEST_COMMON_ASSERT;\
+  if(!(_a)) {\
+    DETEST_FAIL("expected '%s' to be not null",#_a);\
+  }\
+} while(0)
+
 #define ASSERT_NE_INT(_a,_b) do {\
   DETEST_COMMON_ASSERT;\
   int _aa = _a;\
@@ -474,6 +488,7 @@ extern detest_status_t detest_all_suites;\
       #_a,_aa,#_b,_bb);\
   }\
 } while(0)
+
 
 
 
